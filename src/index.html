@@ -5,10 +5,7 @@
   <title>Front</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsKwiOG6roMmlj0JNC3Vw-A4311OcauXs"
-async
-></script>
+  
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
   <!-- Font Awesome -->
@@ -29,7 +26,12 @@ rel="stylesheet"
 </head>
 <body>
   <app-root></app-root>
-
+  <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+  <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsKwiOG6roMmlj0JNC3Vw-A4311OcauXs"
+async
+>
+  </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
   <script>
     $(() => {
@@ -51,6 +53,37 @@ rel="stylesheet"
       });
 
   });
+  </script>
+  <script>
+    $(function() {
+        $('.material-card > .mc-btn-action').click(function () {
+            var card = $(this).parent('.material-card');
+            var icon = $(this).children('i');
+            icon.addClass('fa-spin-fast');
+
+            if (card.hasClass('mc-active')) {
+                card.removeClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-arrow-left')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-bars');
+
+                }, 800);
+            } else {
+                card.addClass('mc-active');
+
+                window.setTimeout(function() {
+                    icon
+                        .removeClass('fa-bars')
+                        .removeClass('fa-spin-fast')
+                        .addClass('fa-arrow-left');
+
+                }, 800);
+            }
+        });
+    });
   </script>
 
 </body>

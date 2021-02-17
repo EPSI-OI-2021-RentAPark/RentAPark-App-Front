@@ -6,25 +6,23 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-liste-parking',
   templateUrl: './liste-parking.component.html',
-  styleUrls: ['./liste-parking.component.scss']
+  styleUrls: ['./liste-parking.component.css']
 })
 export class ListeParkingComponent implements OnInit {
 
-  users ;
-  parkings;
+  datas ;
   constructor(private httpClient : HttpClient) { }
 
   ngOnInit(): void {
     this.getAllParkings();
-    this.getAllUser();
   }
 
   getAllParkings() {
     this.httpClient
-      .get<any[]>(environment.server + "parkings")
+      .get<any[]>(environment.server + "alls")
       .subscribe(
         (response) => {
-          this.parkings = response;
+          this.datas = response;
           console.log(response);
         },
         (error) => {
@@ -33,17 +31,4 @@ export class ListeParkingComponent implements OnInit {
       );
   }
 
-  getAllUser() {
-    this.httpClient
-      .get<any[]>(environment.server + "users")
-      .subscribe(
-        (response) => {
-          this.users = response;
-          console.log(response);
-        },
-        (error) => {
-          console.log('Erreur ! : ' + error);
-        }
-      );
-  }
 }

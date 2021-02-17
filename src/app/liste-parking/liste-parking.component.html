@@ -1,27 +1,35 @@
-<div class="container">
-    <div *ngFor="let user of users" class="card">
-      <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
-      <p class="card__name">{{user.name}}</p>
-      <div class="grid-container">
-  
-        <div class="grid-child-posts">
-          {{user.adress}}
-        </div>
-  
-        <div class="grid-child-followers">
-          {{user.price}}
-        </div>
-  
+<section class="container mt-5">
+  <div class="row active-with-click">
+      <div *ngFor="let data of datas" class="col-md-4 col-sm-6 col-xs-12">
+          <article class="material-card Red">
+              <h2>
+                  <span>{{data.name}}</span>
+                  <strong>
+                      <i class="fa fa-fw fa-star"></i>
+                      {{data.ville}} - {{data.prix}}€
+                  </strong>
+              </h2>
+              <div class="mc-content">
+                  <div class="img-container">
+                      <img width="400" height="400" [src]="data.url_img">
+                  </div>
+                  <div class="mc-description">
+                      He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...
+                  </div>
+              </div>
+              <a class="mc-btn-action">
+                  <i class="fa fa-bars"></i>
+              </a>
+              <div class="mc-footer">
+                  <h4>
+                      Social
+                  </h4>
+                  <a class="fa fa-fw fa-facebook"></a>
+                  <a class="fa fa-fw fa-twitter"></a>
+                  <a class="fa fa-fw fa-linkedin"></a>
+                  <a class="fa fa-fw fa-google-plus"></a>
+              </div>
+          </article>
       </div>
-      <ul class="social-icons">
-        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fa fa-codepen"></i></a></li>
-      </ul>
-      <button class="btn draw-border">Follow</button>
-      <button class="btn draw-border">Message</button>
-  
-    </div>
   </div>
-  
+</section>
