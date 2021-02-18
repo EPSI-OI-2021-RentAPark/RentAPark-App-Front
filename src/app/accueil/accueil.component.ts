@@ -2,7 +2,6 @@ import { Position } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { } from 'googlemaps';
 
 @Component({
 selector: 'app-accueil',
