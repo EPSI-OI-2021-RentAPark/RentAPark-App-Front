@@ -8,6 +8,8 @@ import { ListeParkingComponent } from './liste-parking/liste-parking.component';
 import { ProfilComponent } from './profil/profil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { CheminComponent } from './chemin/chemin.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { LoginComponent } from './login/login.component';
     AccueilComponent,
     ListeParkingComponent,
     LoginComponent,
+    ReservationComponent,
+    CheminComponent,
   ],
   imports: [
     BrowserModule,

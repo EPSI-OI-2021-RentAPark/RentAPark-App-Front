@@ -1,13 +1,11 @@
 
 <div class="text-center mt-7">
     <div class="row">
-    <h1>Bienvenue sur Rent a Car</h1>
-    <h2>Sélectionner votre place de parking</h2>
+    <h1 class="text-warning">Bienvenue sur Rent a Car</h1>
+    <h2 class="text-white">Sélectionner votre place de parking</h2>
     <div class="col-lg">
         <div class="container mt-7 text-center">
-            <div id="map"></div>
-            <hr>
-          
+            <div id="map"></div>          
         </div>
         <ul id="list"></ul>
     </div>
@@ -60,12 +58,11 @@
                     <i class="ni location_pin mr-2"></i>France, Paris
                   </div>
                   <div class="h5 mt-4">
-                    <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                    <i class="ni business_briefcase-24 mr-2"></i>125 rue de la gare
                   </div>
                   <div>
-                    <i class="ni education_hat mr-2"></i>University of Computer Science
+                    <i class="ni education_hat mr-2"></i><strong>12€/Heure</strong>
                   </div>
-                  <hr class="my-4">
                 </div>
               </div>
             </div>
@@ -75,7 +72,7 @@
   
     </div>
 </div>
-    <a class="btn btn-secondary">Réserver ma place chez Jessica</a>
+    <a class="btn btn-success bg-warning"  [routerLink]="['/reservation']" routerLinkActive="router-link-active" >Réserver ma place chez Jessica</a>
 </div>
 
 
