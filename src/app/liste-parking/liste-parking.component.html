@@ -1,35 +1,15 @@
-<section class="container mt-5">
-  <div class="row active-with-click">
-      <div *ngFor="let data of datas" class="col-md-4 col-sm-6 col-xs-12">
-          <article class="material-card Red">
-              <h2>
-                  <span>{{data.name}}</span>
-                  <strong>
-                      <i class="fa fa-fw fa-star"></i>
-                      {{data.ville}} - {{data.prix}}€
-                  </strong>
-              </h2>
-              <div class="mc-content">
-                  <div class="img-container">
-                      <img width="400" height="400" [src]="data.url_img">
-                  </div>
-                  <div class="mc-description">
-                      He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...
-                  </div>
-              </div>
-              <a class="mc-btn-action">
-                  <i class="fa fa-bars"></i>
-              </a>
-              <div class="mc-footer">
-                  <h4>
-                      Social
-                  </h4>
-                  <a class="fa fa-fw fa-facebook"></a>
-                  <a class="fa fa-fw fa-twitter"></a>
-                  <a class="fa fa-fw fa-linkedin"></a>
-                  <a class="fa fa-fw fa-google-plus"></a>
-              </div>
-          </article>
-      </div>
-  </div>
-</section>
+<div class="container text-center mt-5 ">
+    <div class="row">
+<div *ngFor="let data of datas" class="col-sm">
+<div  class="card mt-5" style="width: 20rem;">
+<img class="card-img-top" [src]="data.url_img" alt="Card image cap">
+<div class="card-body">
+    <h5 class="card-title">{{data.name}}</h5>
+    <h6 class="card-title">{{data.code_postal}}, {{data.ville}} <br>{{data.rue}}</h6>
+    <p class="card-text">{{data.prix}}€/Heure</p>
+    <a href="#" class="btn btn-primary">Voir</a>
+</div>
+</div>
+</div>
+</div>
+</div>
