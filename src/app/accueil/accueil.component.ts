@@ -49,7 +49,7 @@ ngAfterViewInit(){
 initMap(): void {
   var propriete_maps = {
     center: { lat: -34.397, lng: 150.644 },
-    zoom: 2,
+    zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
