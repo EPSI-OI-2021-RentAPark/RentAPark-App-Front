@@ -17,30 +17,12 @@ constructor(private httpClient: HttpClient) { }
 map: google.maps.Map;
 
 ngOnInit(): void {
-  
-// Loop through the results array and place a marker for each
-// set of coordinates.
-var script = document.createElement('script');
-  var script2 = document.createElement('script');
-  
-  script2.text = "const eqfeed_callback = function (results) {"
-  +"   for (let i = 0; i < results.features.length; i++) {"
-  +"     const coords = results.features[i].geometry.coordinates;"
-  +"     const latLng = new google.maps.LatLng(coords[1], coords[0]);"
-  +"     new google.maps.Marker({"
-  +"       position: latLng,"
-  +"       map: map,"
-  +"     });"
-  +"   }"
-  +" };";
-  script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
-  document.getElementsByTagName('head')[0].appendChild(script2);
-  document.getElementsByTagName('head')[0].appendChild(script);
+  this.initMap();
 }
 
 
 ngAfterViewInit(){
-  this.initMap();
+ 
 
   
 }
@@ -50,7 +32,7 @@ initMap(): void {
   var propriete_maps = {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 15,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: "terrain",
   };
 
   this.map = new google.maps.Map(document.getElementById("map"), propriete_maps);
@@ -69,11 +51,28 @@ initMap(): void {
             url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
           }
         });
+
+        const script = document.createElement("script");
+        const script2 = document.createElement("script");
+        script2.text = "function eqfeed_callback(results) {"
+        +"   for (let i = 0; i < results.features.length; i++) {"
+        +"     const coords = results.features[i].geometry.coordinates;"
+        +"     const latLng = new google.maps.LatLng(coords[1], coords[0]);"
+        +"     new google.maps.Marker({"
+        +"       position: latLng,"
+        +"       map: map,"
+        +"     });"
+        +"   }"
+        +" };";
+  // This example uses a local copy of the GeoJSON stored at
+  // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+  script.src ="https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js";
+  document.getElementsByTagName("head")[0].appendChild(script);
 });
 
-
-
 }
+
+
 
 getAllParkings() {
   this.httpClient
