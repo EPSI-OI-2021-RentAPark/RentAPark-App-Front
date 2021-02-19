@@ -28,8 +28,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" [routerLink]="['/accueil']" routerLinkActive="router-link-active" >Accueil</a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/list']" routerLinkActive="router-link-active" >List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/chemin']" routerLinkActive="router-link-active" >Mes réservations</a>
         </li>
         <!-- Navbar dropdown -->
         <li class="nav-item dropdown">
@@ -46,13 +50,14 @@
           <!-- Dropdown menu -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" [routerLink]="['/profil']" routerLinkActive="router-link-active" >Voir</a></li>
-            <li><a class="dropdown-item" href="#">Modifier</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/profil']">Modifier</a></li>
             <li><hr class="dropdown-divider" /></li>
             <li>
               <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Deconnexion</a>
             </li>
           </ul>
         </li>
+      
       </ul>
       <!-- Left links -->
 

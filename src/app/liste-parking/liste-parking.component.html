@@ -1,5 +1,6 @@
 <div class="container text-center mt-5 ">
-    <div class="row">
+    <div *ngIf="datas ==  null"><img src="../../assets/img/load.gif" alt=""></div>
+    <div *ngIf="datas != null" class="row">
 <div *ngFor="let data of datas" class="col-sm">
 <div  class="card mt-5" style="width: 20rem;">
 <img class="card-img-top" [src]="data.url_img" alt="Card image cap">
@@ -7,7 +8,7 @@
     <h5 class="card-title">{{data.name}}</h5>
     <h6 class="card-title">{{data.code_postal}}, {{data.ville}} <br>{{data.rue}}</h6>
     <p class="card-text">{{data.prix}}€/Heure</p>
-    <a href="#" class="btn btn-primary">Voir</a>
+    <a href="#" class="btn btn-warning">Voir</a>
 </div>
 </div>
 </div>
