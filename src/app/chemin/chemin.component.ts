@@ -11,10 +11,10 @@ export class CheminComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
   
 map: google.maps.Map;
+code : number;
 
 ngOnInit(): void {
-  
-
+  this.code = Math.floor(Math.random() * (100 - 9000+1)) + 9000;
 }
 
 
